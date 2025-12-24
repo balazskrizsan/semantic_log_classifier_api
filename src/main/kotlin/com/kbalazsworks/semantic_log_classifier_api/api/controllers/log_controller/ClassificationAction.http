@@ -1,0 +1,51 @@
+###
+POST http://localhost:8080/v1/log/classification
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Payment error",
+  "structuredMessage": "Payment error"
+}
+
+###
+POST http://localhost:8080/v1/log/classification
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "error in payment",
+  "structuredMessage": "error in payment"
+}
+
+###
+POST http://localhost:8080/v1/log/classification
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Database error",
+  "structuredMessage": "Database error"
+}
+
+###
+POST http://localhost:8080/v1/log/classification
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "identity server unavailable",
+  "structuredMessage": "identity server unavailable"
+}

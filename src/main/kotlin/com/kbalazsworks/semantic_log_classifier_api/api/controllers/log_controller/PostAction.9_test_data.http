@@ -1,0 +1,116 @@
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Payment gateway failure, user ID: 123, gateway: 345",
+  "structuredMessage": "Payment gateway failure, user ID: {userId}, gateway: {gatewayId}"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Payment general error",
+  "structuredMessage": "Payment general error"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Error in payment",
+  "structuredMessage": "Error in payment"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Login error",
+  "structuredMessage": "Login error"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Authentication error",
+  "structuredMessage": "Authentication error"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Login error with userId: 123",
+  "structuredMessage": "Login error with userId: {userId}"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "AWS API error",
+  "structuredMessage": "AWS API error"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Cloud api error",
+  "structuredMessage": "Cloud api error"
+}
+
+###
+POST http://localhost:3040/v1/log
+Content-Type: application/json
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "level": "ERROR",
+  "rawMessage": "Unable to reach AWS",
+  "structuredMessage": "Unable to reach AWS"
+}
