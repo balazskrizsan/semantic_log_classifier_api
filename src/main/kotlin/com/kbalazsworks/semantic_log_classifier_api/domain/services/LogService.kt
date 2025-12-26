@@ -74,12 +74,7 @@ class LogService(
         log.info("Create embed: {}", request)
 
         vectorStore384Repository.save(
-            VectorStoreX(
-                null,
-                1L,
-                mapOf("type" to "log", "text" to request.text),
-                PGvector(content().vector())
-            )
+            VectorStoreX(null, 1L, mapOf("type" to "log", "text" to request.text), PGvector(content().vector()))
         )
     }
 }
