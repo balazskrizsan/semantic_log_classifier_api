@@ -39,8 +39,7 @@ jobs:
         env:
           SERVER_ENV: DEV
           SERVER_PORT: 9999
-          NATIVE_REFLECTION_CONFIGURATION_GENERATOR_ENABLED: false
-        run: mvn native:compile -DskipTests -Dslogback.logstash.enabled=false -Dnative.reflection-configuration-generator.enabled=false
+        run: mvn -DskipTests -Dslogback.logstash.enabled=false
 
       - uses: scacap/action-surefire-report@v1
         if: success() || failure()
