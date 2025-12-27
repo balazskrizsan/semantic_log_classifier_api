@@ -24,11 +24,11 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
 
-#      - name: Login to DockerHub
-#        uses: docker/login-action@v1
-#        with:
-#          username: ${{ secrets.DOCKERHUB_USERNAME }}
-#          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Versions
         run: |
@@ -59,3 +59,10 @@ jobs:
           ls -hal ./src
           echo "===========> ls -hal /target:"
           ls -hal ./target
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: kbalazsworks/semantic_log_classifier_api:${{ env.RELEASE_VERSION }}, kbalazsworks/semantic_log_classifier_api:latest, kbalazsworks/semantic_log_classifier_api:commit_sha_short_${{ env.COMMIT_SHA_SHORT }}
