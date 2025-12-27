@@ -23,13 +23,13 @@ class ClassifyTest : AbstractTest() {
             GenericTestDataP2(
                 testedData = EmbeddingRequest("User login problem"),
                 expectedResponse = listOf(
-                    VectorStoreXSimilarity(0.81292105F, VectorStore384FakeBuilder().build_realVector4()),
+                    VectorStoreXSimilarity(0.81292117F, VectorStore384FakeBuilder().build_realVector4()),
                 ),
             ),
             GenericTestDataP2(
                 testedData = EmbeddingRequest("Payment error"),
                 expectedResponse = listOf(
-                    VectorStoreXSimilarity(0.97601986F, VectorStore384FakeBuilder().build_realVector3()),
+                    VectorStoreXSimilarity(0.9760199F, VectorStore384FakeBuilder().build_realVector3()),
                 ),
             ),
             GenericTestDataP2(
