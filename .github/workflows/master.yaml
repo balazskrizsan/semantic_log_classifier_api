@@ -7,6 +7,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16.2
+        env:
+          POSTGRES_PASSWORD: password
+          POSTGRES_USER: admin
+          POSTGRES_DB: app_db
+        ports:
+          - 5432:5432
     permissions: # The permissions the surefire test report
       checks: write
       contents: read
@@ -39,7 +48,9 @@ jobs:
         env:
           SERVER_ENV: DEV
           SERVER_PORT: 9999
-        run: mvn clean package -DskipTests -Dslogback.logstash.enabled=false -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          SPRING_FLYWAY_URL: jdbc:postgresql://localhost:5432/app_db
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app_db
+        run: mvn clean package -Dslogback.logstash.enabled=false -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
       - uses: scacap/action-surefire-report@v1
         if: success() || failure()
