@@ -50,7 +50,7 @@ jobs:
           SERVER_PORT: 9999
           SPRING_FLYWAY_URL: jdbc:postgresql://localhost:5432/app_db
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app_db
-        run: mvn clean package -Dslogback.logstash.enabled=false -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+        run: mvn clean package -Dslogback.logstash.enabled=false -ntp -Dslogback.logstash.enabled=false
 
       - uses: scacap/action-surefire-report@v1
         if: success() || failure()
