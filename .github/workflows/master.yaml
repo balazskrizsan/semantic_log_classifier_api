@@ -11,7 +11,7 @@ jobs:
       postgres:
         image: ankane/pgvector:v0.5.1
         env:
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: admin_pass
           POSTGRES_USER: admin
           POSTGRES_DB: app_db
         ports:
