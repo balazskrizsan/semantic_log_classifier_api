@@ -12,10 +12,10 @@ abstract class AbstractE2eTest : AbstractTest() {
 
     fun getMockMvc() = getMockMvc(false)
 
-    fun getMockMvc(apOverride: Boolean) = MockMvcBuilders.webAppContextSetup(this.wac).build()
+    fun getMockMvc(apOverride: Boolean) = MockMvcBuilders.webAppContextSetup(this.wac!!).build()
 
 //    fun getMockMvcWithSecurity() =  MockMvcBuilders
-//        .webAppContextSetup(this.wac)
+//        .webAppContextSetup(this.wac!!)
 //        .apply(springSecurity())
 //        .build()
 }
