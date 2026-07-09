@@ -8,17 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.time.Instant
 
 @RestController
 @RequestMapping("/v1/log/classification")
 class ClassificationAction(val logService: LogService) {
     @PostMapping(consumes = ["application/json"], produces = ["application/json"])
-    fun post(@RequestBody request: Request) = ResponseEntityBuilder<List<VectorStoreXSimilarity>>().apply {
-        data = logService.classify(map(request))
+    fun post(@RequestBody request: Request) = ResponseEntityBuilder<Response>().apply {
+        data = Response(
+            logService.classify(map(request)),
+            request
+        )
         build()
     }
 
-    private fun map(request: Request) = EmbeddingRequest(request.rawMessage)
+    private fun map(request: Request) = EmbeddingRequest(request.structuredMessage, request.timestamp)
 
-    data class Request(val level: String, val rawMessage: String, val structuredMessage: String)
+    data class Request(val level: String, val structuredMessage: String, val message: String, val timestamp: Instant)
+    data class Response(val vectorStoreXSimilarity: VectorStoreXSimilarity, val originalRequest: Request)
 }

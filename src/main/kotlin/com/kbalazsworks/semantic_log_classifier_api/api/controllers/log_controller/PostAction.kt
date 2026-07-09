@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.time.Instant
 
 @RestController
 @RequestMapping("/v1/log")
@@ -15,8 +16,7 @@ class PostAction(val logService: LogService) {
         logService.createAndSaveEmbedding(map(request))
     }
 
-    private fun map(request: Request) = EmbeddingRequest(request.structuredMessage)
+    private fun map(request: Request) = EmbeddingRequest(request.structuredMessage, request.timestamp)
 
-    @JvmRecord
-    data class Request(val level: String, val rawMessage: String, val structuredMessage: String)
+    data class Request(val level: String, val rawMessage: String, val structuredMessage: String, val timestamp: Instant)
 }

@@ -23,7 +23,7 @@ class LogService(
         private val classificationConfig = ClassificationConfig(0.8F, 1L)
     }
 
-    fun classify(embeddingRequest: EmbeddingRequest): List<VectorStoreXSimilarity> {
+    fun classify(embeddingRequest: EmbeddingRequest): VectorStoreXSimilarity {
         log.info("Classification started: {}", embeddingRequest)
         log.info("Classification - embedding started: {}", embeddingRequest.text)
 
@@ -67,7 +67,7 @@ class LogService(
 
         log.info("Classification finished: {}", similarityResponse)
 
-        return similarityResponse
+        return similarityResponse.first()
     }
 
     fun createAndSaveEmbedding(request: EmbeddingRequest) = embeddingModel.embed(request.text).run {
